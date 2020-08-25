@@ -12,8 +12,11 @@ const App: React.FC = () => {
 
   const addRecordInLogs = (record: string) => {
     const recordIsOperator = isOperator(record)
+    console.log("addRecordInLogs -> recordIsOperator", recordIsOperator)
     const lastRecordInLog = logs[logs.length - 1]
+    console.log("addRecordInLogs -> lastRecordInLog", lastRecordInLog)
     const lastRecordInLogIsOperator = isOperator(lastRecordInLog)
+    console.log("addRecordInLogs -> lastRecordInLogIsOperator", lastRecordInLogIsOperator)
 
     if (logs === "" && recordIsOperator) {
       return
@@ -27,7 +30,8 @@ const App: React.FC = () => {
       setLogs(logs.slice(0, -1) + record)
       return
     }
-
+    console.log("logs", logs)
+    console.log("record", record)
     setLogs(logs + record)
 
   }
@@ -43,7 +47,7 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
-    window.addEventListener("keyup", (event) => {
+    const handleKeyUpClick = (event: any) => {
 
       switch (event.key) {
           case "Enter": 
@@ -100,8 +104,11 @@ const App: React.FC = () => {
           default:
             return; 
       } 
-    });
-  }, []) 
+    }
+    window.addEventListener("keyup", handleKeyUpClick);
+
+    return () => window.removeEventListener("keyup", handleKeyUpClick)
+  }, [logs])
 
 
   return (

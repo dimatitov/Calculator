@@ -1,5 +1,3 @@
-
-
 export const isOperator = (record: string): boolean => isNaN(parseInt(record))
 
 type OperatorType = '+' | '-' | '*' | '/' 
@@ -40,7 +38,6 @@ export const calculate = (logs: string): number  => {
          result = Number(record)
       }
    })
-
    return result
 }
 
