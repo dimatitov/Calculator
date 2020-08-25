@@ -1,11 +1,9 @@
-import React, { useState, useEffect, KeyboardEvent } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from './components/Button';
 import Display from './components/Display';
 import { calculate, isOperator } from './utils'
 import './App.css';
 
-
-// type KeyType = "/" | "7" | "8" | "9" | "*" | "4" | "5" | "6" | "-" | "1" | "2" | "3" | "+" | "0"
 
 const App: React.FC = () => {
   const [logs, setLogs] = useState<string>("")
@@ -43,53 +41,64 @@ const App: React.FC = () => {
     setCalculatedValue(0)
   }
 
-  // const clicButton = (event: any) => {
-  //   if(event.keyCode === "Enter") {
-  //   }
-  // }
-
-
-  
-  useEffect(() => {
-    window.addEventListener('keyup', (e: any): void => {
-      if(e.keyCode === 13) {
+  window.addEventListener("keyup", (event) => {
+    
+    switch (event.key) {
+      case "Enter": 
         handleClickOnCalcButton()
-      }else if(e.keyCode === 46 || e.keyCode === 8) {
+        break;
+      case "*": 
+        addRecordInLogs("*")
+        break;
+      case "/":
+        addRecordInLogs("/") 
+        break;
+      case "-": 
+        addRecordInLogs("-")
+        break;
+      case "+":
+        addRecordInLogs("+")
+        break;
+      case "Delete": 
         handleClearClick()
-        return
-      }else if(e.keyCode === 96 || e.keyCode === 48) {
-        return addRecordInLogs("0")
-      }else if(e.keyCode === 97 || e.keyCode === 49) {
-        return addRecordInLogs("1")
-      }else if(e.keyCode === 98 || e.keyCode === 50) {
-        return addRecordInLogs("2")
-      }else if(e.keyCode === 99 || e.keyCode === 51) {
-        return addRecordInLogs("3")
-      }else if(e.keyCode === 100 || e.keyCode === 52) {
-        return addRecordInLogs("4")
-      }else if(e.keyCode === 101 || e.keyCode === 53) {
-        return addRecordInLogs("5")
-      }else if(e.keyCode === 102 || e.keyCode === 54) {
-        return addRecordInLogs("6")
-      }else if(e.keyCode === 103 || e.keyCode === 55) {
-        return addRecordInLogs("7")
-      }else if(e.keyCode === 104 || e.keyCode === 56) {
-        return addRecordInLogs("8")
-      }else if(e.keyCode === 105 || e.keyCode === 57) {
-        return addRecordInLogs("9")
-      }else if(e.keyCode === 111) {
-        return addRecordInLogs("/")
-      }else if(e.keyCode === 106) {
-        return addRecordInLogs("*")
-      }else if(e.keyCode === 109) {
-        return addRecordInLogs("-")
-      }else if(e.keyCode === 107) {
-        return addRecordInLogs("+")
-      }
-
-      
-    })
-  })
+        break;
+      case "Backspace": 
+        handleClearClick()
+        break;
+      case "7":
+        addRecordInLogs("7")
+        break;
+      case "8":
+        addRecordInLogs("8")
+        break;
+      case "9":
+          addRecordInLogs("9")
+          break;
+      case "4":
+        addRecordInLogs("4")
+        break;
+      case "5":
+        addRecordInLogs("5")
+        break;
+      case "6":
+        addRecordInLogs("6")
+        break;
+      case "1":
+        addRecordInLogs("1")
+        break;
+      case "2":
+        addRecordInLogs("2")
+        break;
+      case "3":
+        addRecordInLogs("3")
+        break;
+      case "0":
+        addRecordInLogs("0")
+        break;
+      default:
+        return; 
+    } 
+  });
 
 
   return (

@@ -6,10 +6,9 @@ interface IButtonProps {
    title: string
    onClick: () => void
    white?: boolean
-   onKeyUp?: () => void
 }
 
-const Button: React.FC<IButtonProps> = ({ white, title, onClick, onKeyUp }) => {
+const Button: React.FC<IButtonProps> = ({ white, title, onClick }) => {
    return(
       <button 
          className={classNames({
@@ -17,7 +16,6 @@ const Button: React.FC<IButtonProps> = ({ white, title, onClick, onKeyUp }) => {
             [styles.btnWhite]: white,
          })}
          onClick={onClick}
-         onKeyUp={onKeyUp}
       >
          
          {title}

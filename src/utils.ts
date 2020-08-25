@@ -19,7 +19,7 @@ export const calcByOperator = (a: number, b: number, operator: OperatorType): nu
    }
 }
 
-export const calculate = (logs: string): number => {
+export const calculate = (logs: string): number  => {
    let result = 0
    const logsArray = logs.split(/(\+|\-|\*|\/)/)
 
