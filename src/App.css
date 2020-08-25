@@ -6,6 +6,7 @@
 }
 
 .calc { 
+  background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(4px);
   width: 616px;
   height: 876px;
@@ -39,4 +40,66 @@
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 40px;
   grid-row-gap: 16px;
+}
+
+@media (max-width: 375px), (max-height: 812px) {
+  .App {
+    padding-top: 0;
+  }
+
+  .calc {
+    height: 811px;
+  }
+
+  .calc__body {
+    padding: 87px 27px 115px 26px;
+    border-radius: 0;
+  }
+
+  .grid-container {
+    grid-template-rows: 1fr 23px 2fr;
+    grid-row-gap: 15px;
+  }
+
+  .grid-container__btn {
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(5, 60px);
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+  }
+}
+
+@media (max-width: 330px), (max-height: 568px) {
+  .App {
+    padding-top: 0;
+  }
+
+  .calc {
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(4px);
+    width: 616px;
+    height: 566px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 18px;
+  }
+
+  .calc__body {
+    padding: 20px 18px 60px 12px;
+    border-radius: 0;
+  }
+
+  .grid-container {
+    grid-template-rows: 0.2fr 20px 0.2fr;
+    grid-row-gap: 0;
+  }
+
+  .grid-container__btn {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(5, 50px);
+    grid-column-gap: 30px;
+    grid-row-gap: 20px;
+  }
 }

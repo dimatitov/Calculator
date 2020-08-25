@@ -23,3 +23,20 @@
   text-align: right;
   color: #f2f2f2;
 }
+
+@media (max-width: 375px), (max-height: 812px) {
+  .resultArea {
+    grid-row-gap: 20px;
+  }
+
+  .resultAreaResult {
+    font-size: 64px;
+    line-height: 100px;
+  }
+}
+
+@media (max-width: 330px), (max-height: 568px) {
+  .resultArea {
+    grid-row-gap: 0;
+  }
+}
