@@ -1,10 +1,10 @@
-.result-area {
+.resultArea {
    display: grid;
    grid-template-rows: repeat(2, 76px);
    grid-row-gap: 18px;
 }
 
-.result-area__priority {
+.resultAreaCalulated {
    font-style: normal;
    font-weight: 500;
    font-size: 24px;
@@ -15,7 +15,7 @@
    color: #F2F2F2;
 }
 
-.result-area__result {
+.resultAreaResult {
    font-style: normal;
    font-weight: bold;
    font-size: 56px;
