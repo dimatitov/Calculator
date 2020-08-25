@@ -41,64 +41,67 @@ const App: React.FC = () => {
     setCalculatedValue(0)
   }
 
-  window.addEventListener("keyup", (event) => {
-    
-    switch (event.key) {
-      case "Enter": 
-        handleClickOnCalcButton()
-        break;
-      case "*": 
-        addRecordInLogs("*")
-        break;
-      case "/":
-        addRecordInLogs("/") 
-        break;
-      case "-": 
-        addRecordInLogs("-")
-        break;
-      case "+":
-        addRecordInLogs("+")
-        break;
-      case "Delete": 
-        handleClearClick()
-        break;
-      case "Backspace": 
-        handleClearClick()
-        break;
-      case "7":
-        addRecordInLogs("7")
-        break;
-      case "8":
-        addRecordInLogs("8")
-        break;
-      case "9":
-          addRecordInLogs("9")
-          break;
-      case "4":
-        addRecordInLogs("4")
-        break;
-      case "5":
-        addRecordInLogs("5")
-        break;
-      case "6":
-        addRecordInLogs("6")
-        break;
-      case "1":
-        addRecordInLogs("1")
-        break;
-      case "2":
-        addRecordInLogs("2")
-        break;
-      case "3":
-        addRecordInLogs("3")
-        break;
-      case "0":
-        addRecordInLogs("0")
-        break;
-      default:
-        return; 
-    } 
-  });
+
+  useEffect(() => {
+    window.addEventListener("keyup", (event) => {
+
+      switch (event.key) {
+          case "Enter": 
+            handleClickOnCalcButton()
+            break;
+          case "*": 
+            addRecordInLogs("*")
+            break;
+          case "/":
+            addRecordInLogs("/") 
+            break;
+          case "-": 
+            addRecordInLogs("-")
+            break;
+          case "+":
+            addRecordInLogs("+")
+            break;
+          case "Delete": 
+            handleClearClick()
+            break;
+          case "Backspace": 
+            handleClearClick()
+            break;
+          case "7":
+            addRecordInLogs("7")
+            break;
+          case "8":
+            addRecordInLogs("8")
+            break;
+          case "9":
+            addRecordInLogs("9")
+            break;
+          case "4":
+            addRecordInLogs("4")
+            break;
+          case "5":
+            addRecordInLogs("5")
+            break;
+          case "6":
+            addRecordInLogs("6")
+            break;
+          case "1":
+            addRecordInLogs("1")
+            break;
+          case "2":
+            addRecordInLogs("2")
+            break;
+          case "3":
+            addRecordInLogs("3")
+            break;
+          case "0":
+            addRecordInLogs("0")
+            break;
+          default:
+            return; 
+      } 
+    });
+  }, []) 
 
 
   return (
