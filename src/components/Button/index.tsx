@@ -10,14 +10,13 @@ interface IButtonProps {
 
 const Button: React.FC<IButtonProps> = ({ white, title, onClick }) => {
    return(
-      <button 
+      <button
          className={classNames({
             [styles.btn]: true,
             [styles.btnWhite]: white,
          })}
          onClick={onClick}
       >
-         
          {title}
       </button>
    );

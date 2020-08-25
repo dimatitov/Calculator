@@ -8,15 +8,10 @@ import './App.css';
 const App: React.FC = () => {
   const [logs, setLogs] = useState<string>("")
   const [calculatedValue, setCalculatedValue ] = useState<number>(0)
-  
-
   const addRecordInLogs = (record: string) => {
     const recordIsOperator = isOperator(record)
-    console.log("addRecordInLogs -> recordIsOperator", recordIsOperator)
     const lastRecordInLog = logs[logs.length - 1]
-    console.log("addRecordInLogs -> lastRecordInLog", lastRecordInLog)
     const lastRecordInLogIsOperator = isOperator(lastRecordInLog)
-    console.log("addRecordInLogs -> lastRecordInLogIsOperator", lastRecordInLogIsOperator)
 
     if (logs === "" && recordIsOperator) {
       return
@@ -30,8 +25,6 @@ const App: React.FC = () => {
       setLogs(logs.slice(0, -1) + record)
       return
     }
-    console.log("logs", logs)
-    console.log("record", record)
     setLogs(logs + record)
 
   }
@@ -50,25 +43,25 @@ const App: React.FC = () => {
     const handleKeyUpClick = (event: any) => {
 
       switch (event.key) {
-          case "Enter": 
+          case "Enter":
             handleClickOnCalcButton()
             break;
-          case "*": 
+          case "*":
             addRecordInLogs("*")
             break;
           case "/":
-            addRecordInLogs("/") 
+            addRecordInLogs("/")
             break;
-          case "-": 
+          case "-":
             addRecordInLogs("-")
             break;
           case "+":
             addRecordInLogs("+")
             break;
-          case "Delete": 
+          case "Delete":
             handleClearClick()
             break;
-          case "Backspace": 
+          case "Backspace":
             handleClearClick()
             break;
           case "7":
@@ -102,8 +95,8 @@ const App: React.FC = () => {
             addRecordInLogs("0")
             break;
           default:
-            return; 
-      } 
+            return;
+      }
     }
     window.addEventListener("keyup", handleKeyUpClick);
 
@@ -118,7 +111,7 @@ const App: React.FC = () => {
           <div className="grid-container">
             <Display logs={logs} calculatedValue={calculatedValue} />
 
-            <div className="grid-container__line"></div>
+            <div className="grid-container__line"/>
 
             <div className="grid-container__btn">
               <Button title="c" onClick={() => handleClearClick()}/>
@@ -144,7 +137,7 @@ const App: React.FC = () => {
               <Button title="00" onClick={() => addRecordInLogs("00")}/>
               <Button title="0" onClick={() => addRecordInLogs("0")}/>
               <Button title="," onClick={() => addRecordInLogs(",")}/>
-              <Button white title="=" onClick={handleClickOnCalcButton}/>
+              <Button white={true} title="=" onClick={handleClickOnCalcButton}/>
             </div>
 
           </div>

@@ -1,6 +1,6 @@
-export const isOperator = (record: string): boolean => isNaN(parseInt(record))
+export const isOperator = (record: string): boolean => isNaN(parseInt(record, 10))
 
-type OperatorType = '+' | '-' | '*' | '/' 
+type OperatorType = '+' | '-' | '*' | '/'
 
 export const calcByOperator = (a: number, b: number, operator: OperatorType): number => {
    switch(operator) {
