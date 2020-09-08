@@ -1,6 +1,6 @@
 export const isOperator = (record: string): boolean => isNaN(parseInt(record, 10))
 
-type OperatorType = '+' | '-' | '*' | '/'
+type OperatorType = '+' | '-' | '*' | '/' | '√'
 
 export const calcByOperator = (a: number, b: number, operator: OperatorType): number => {
    switch(operator) {
@@ -16,12 +16,15 @@ export const calcByOperator = (a: number, b: number, operator: OperatorType): nu
       case '/':
          return a / b
 
+      case '√':
+         return Math.sqrt(a)
+
    }
 }
 
 export const calculate = (logs: string): number  => {
    let result = 0
-   const logsArray = logs.split(/(\+|\-|\*|\/)/)
+   const logsArray = logs.split(/(\+|\-|\*|\/|\√)/)
 
    logsArray.forEach((record, index, arr) => {
       const recordIsOperator = isOperator(record)
