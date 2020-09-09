@@ -2,20 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-   entry: "./src/index.tsx",
-   mode: "development",
    devtool: 'inline-source-map',
-   output: {
-      filename: "./main.js"
-   },
-   
-   devServer: {
-      contentBase: path.join(__dirname, "dist"),
-      compress: true,
-      port: 9000,
-      watchContentBase: true,
-      progress: true
-   },
 
    resolve: {
       extensions: [".ts", ".tsx", ".js", ".json"]
@@ -33,14 +20,6 @@ module.exports = {
             enforce: "pre", 
             test: /\.js$/, 
             loader: "source-map-loader" 
-         },
-
-         {
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-               loader: "babel-loader"
-            }
          },
 
          {
@@ -73,7 +52,7 @@ module.exports = {
 
    plugins: [
       new HtmlWebpackPlugin({
-         template: path.join(__dirname, "public", "index.html")
+         template: 'public/index.html'
       })
    ]
 };
