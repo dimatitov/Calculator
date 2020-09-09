@@ -18,7 +18,6 @@ export const calcByOperator = (a: number, b: number, operator: OperatorType): nu
 
       case '√':
          return Math.sqrt(a)
-
    }
 }
 
