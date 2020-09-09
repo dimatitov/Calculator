@@ -6,6 +6,9 @@ typesript`a, tslint, stylelint
 ### `npm start`
 Запуск проекта в браузре через host
 
+### `npm test`
+Запуск тестов
+
 ### `npm run build`
 Создание финального билда
 
