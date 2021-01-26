@@ -1,3 +1,5 @@
+### `Рабочий калькулятор`
+
 ### `npm install`
 Установка модулей create-react-app,
 typesript`a, tslint, stylelint
